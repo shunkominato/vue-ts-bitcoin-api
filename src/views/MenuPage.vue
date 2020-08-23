@@ -3,7 +3,7 @@
         <heding class="header" />
         <div class="container">
             <div class="row">
-                <menu-frame title="HOME" content="menuへ" />
+                <menu-frame title="Menu" content="Api実行へ" />
             </div>
         </div>
     </div>
