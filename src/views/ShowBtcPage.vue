@@ -26,6 +26,8 @@ export default Vue.extend({
         ApiFrame,
     },
     computed: {
+        // getters call
+        // stores/gettersを呼ぶ
         getBTCUSD(): string {
             return this.$store.getters['stores/getBTCUSD']
         },
@@ -38,6 +40,8 @@ export default Vue.extend({
     },
     methods: {
         getBTC(): void {
+            // actions dispatch
+            // stores/actions.tsのgetBTCを呼ぶ
             this.$store.dispatch('stores/getBTC')
         },
     },
