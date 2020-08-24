@@ -18,19 +18,22 @@ decorator を使用せず、Vue TypeScript を使用しベストプラクティ�
 
 ---
 
-Atomic Design で分割しているが、tmplates と pages は使用していない  
+component を Atomic Design で分割しているが、tmplates と pages は使用していない  
 view フォルダが pages に当たる  
-actions に dispatch するのは view のみに統一
+state などの型定義は stores/entities/entities.ts で定義  
+Axios 通信を実行するのは/stores/asyncRequest.ts であり、共通ライブラリとして使用するため、レスポンスの型を any としている
 
-vuex の流れ  
-1.components or views で dispach し、 stores/actions.ts の Actions を呼ぶ  
-2.Actions で Api を実行(Axios)  
-3.実行後、Actions から Mutation を呼び出し、state を更新  
-4.components or views で computed にて getters を呼び、価格を取得する
+-   vuex の流れ  
+    1.components or views で dispach し、 stores/actions.ts の Actions を呼ぶ  
+    2.Actions で Api を実行(Axios)  
+    3.実行後、Actions から Mutation を呼び出し、state を更新  
+    4.components or views で computed にて getters を呼び、価格を取得する
 
-state などの型定義は stores/entities/entities.ts で定義している
-
-Axios 通信実行するのは/stores/asyncRequest.ts であり、共通ライブラリとして使用するため、レスポンスの型を any としている
+-   ルール  
+    actions に dispatch するのは view のみに統一  
+    molecules 以下は dataless  
+    props down emit up  
+    props を子コンポーネントで更新しない
 
 ## install
 
