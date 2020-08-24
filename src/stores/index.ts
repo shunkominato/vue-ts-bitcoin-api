@@ -3,14 +3,7 @@ import actions from './actions'
 import getters from './getters'
 import mutations from './mutations'
 
-type state = {
-    // 最大部数
-    BTCUSD: string
-    BTCGBP: string
-    BTCEUR: string
-}
-export const state = (): state => ({
-    // 最大部数
+export const state = (): State => ({
     BTCUSD: '0',
     BTCGBP: '0',
     BTCEUR: '0',

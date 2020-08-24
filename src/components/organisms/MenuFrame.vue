@@ -2,14 +2,13 @@
     <div class="col-4 mx-auto">
         <div class="card">
             <frame-header>
-                <h5 class="card-header">
-                    MENU
-                </h5>
+                <h5 class="card-header">{{ title }}</h5>
             </frame-header>
-            <div class="card-body">
-                {{ content }}
-            </div>
-            <v-button class="menu-btn" btn-name="menu" @click="rooter"></v-button>
+
+            <menu-frame-body>
+                <div class="card-body">{{ content }}</div>
+            </menu-frame-body>
+
             <div class="card-footer"></div>
         </div>
     </div>
@@ -17,14 +16,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import VButton from '@atoms/VButton.vue'
 import FrameHeader from '@molecules/FrameHeader.vue'
+import MenuFrameBody from '@molecules/MenuFrameBody.vue'
 
 export default Vue.extend({
     name: 'MenuFrame',
     components: {
-        VButton,
         FrameHeader,
+        MenuFrameBody,
     },
     props: {
         title: {
@@ -34,11 +33,6 @@ export default Vue.extend({
         content: {
             type: String,
             required: true,
-        },
-    },
-    methods: {
-        rooter(): void {
-            this.$router.push('/ShowBtcPage')
         },
     },
 })

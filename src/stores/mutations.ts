@@ -4,18 +4,18 @@ export default {
      * @param state
      * @param payload
      */
-    initBTC(state: object, payload: string): void {
+    initBTC(state: State, payload: string): void {
         state.BTCUSD = payload
         state.BTCGBP = payload
         state.BTCEUR = payload
     },
-    setBTCUSD(state: object, payload: string): void {
+    setBTCUSD(state: State, payload: string): void {
         state.BTCUSD = payload
     },
-    setBTCGBP(state: object, payload: string): void {
+    setBTCGBP(state: State, payload: string): void {
         state.BTCGBP = payload
     },
-    setBTCEUR(state: object, payload: string): void {
+    setBTCEUR(state: State, payload: string): void {
         state.BTCEUR = payload
     },
 }

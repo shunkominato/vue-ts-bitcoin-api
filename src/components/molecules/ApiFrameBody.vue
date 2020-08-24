@@ -10,15 +10,9 @@ import Vue from 'vue'
 import VButton from '@atoms/VButton.vue'
 
 export default Vue.extend({
-    name: 'FrameBody',
+    name: 'ApiFrameBody',
     components: {
         VButton,
-    },
-    props: {
-        content: {
-            type: String,
-            required: true,
-        },
     },
     methods: {
         getBTC(): void {
