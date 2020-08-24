@@ -8,6 +8,8 @@ export default {
             asyncRequest(url)
                 .then((res: AxiosResponse): void => {
                     console.log('----------Axios Success----------')
+                    // mutations call
+                    // stores/mutations.tsを呼ぶ
                     commit('setBTCUSD', res.data.bpi.USD.rate)
                     commit('setBTCGBP', res.data.bpi.GBP.rate)
                     commit('setBTCEUR', res.data.bpi.EUR.rate)
