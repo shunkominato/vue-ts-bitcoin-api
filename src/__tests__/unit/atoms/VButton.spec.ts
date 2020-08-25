@@ -8,7 +8,7 @@ describe('VButton.vue', () => {
 
     let wrapper: Wrapper<Vue>
 
-    beforeEach(async () => {
+    beforeEach(() => {
         wrapper = shallowMount(Component, {
             propsData: { btnName, theme },
         })

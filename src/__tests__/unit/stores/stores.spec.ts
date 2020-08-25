@@ -83,7 +83,7 @@ describe('srores', () => {
         Store.commit('stores/setBTCGBP', '90')
         Store.commit('stores/setBTCEUR', '80')
 
-        // 上記で設定したstateと値が設定されていること
+        // 上記で設定した値が各stateに設定されていること
         expect(Store.getters['stores/getBTCUSD']).toEqual('100')
         expect(Store.getters['stores/getBTCGBP']).toEqual('90')
         expect(Store.getters['stores/getBTCEUR']).toEqual('80')
