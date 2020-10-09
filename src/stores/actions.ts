@@ -4,7 +4,7 @@ import asyncRequest from './services/asyncRequest'
 export default {
     getBTC: ({ commit }: { commit: any }): Promise<object> => {
         return new Promise<object>((resolve: () => void, reject: () => void) => {
-            const url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+            const url = 'https://あapi.coindesk.com/v1/bpi/currentprice.json'
             asyncRequest(url)
                 .then((res: AxiosResponse): void => {
                     console.log('----------Axios Success----------')
@@ -18,6 +18,7 @@ export default {
                 .catch((err: any): void => {
                     console.log('----------Axios Err----------')
                     console.log(err)
+                    alert('システムエラーが発生しました')
                     reject()
                 })
         })

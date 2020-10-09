@@ -42,7 +42,11 @@ export default Vue.extend({
         getBTC(): void {
             // actions dispatch
             // stores/actions.tsのgetBTCを呼ぶ
-            this.$store.dispatch('stores/getBTC')
+            try {
+                this.$store.dispatch('stores/getBTC')
+            } catch {
+                console.log('sdfa')
+            }
         },
     },
 })
